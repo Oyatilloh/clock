@@ -44,7 +44,7 @@ body {
     left: 0;    
 }
 .hours{
-    background: #000;
+    background: blue;
     height: 20%;
     left: 48.75%;
     position: absolute;
