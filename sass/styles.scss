@@ -1,0 +1,55 @@
+html {
+	box-sizing: border-box;
+}
+
+*, 
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin makeBox($width: 100px, $height: 100px, $color: green) {
+	width: $width;
+	height: $height;
+	background-color: $color;
+}
+
+
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+		transform-origin: top left;
+	} 
+	to {
+		transform: rotate(360deg);
+		transform-origin: top left;
+	}
+}
+
+
+@mixin makeAnimation($name, $duration, $effect, $count){
+	animation: {
+		name: $name;
+		duration: $duration;
+		timing-function: $effect;
+		iteration-count: $count;
+	}
+}
+
+
+.box {
+	@include makeBox(300px, 300px, red);
+	@include makeAnimation(rotate, 1s, linear, 5);
+}
+
+.box2 {
+	@include makeBox(50px, 50px, blue);
+	@include makeAnimation(rotate, 0.5s, linear, infinite);
+}
+
